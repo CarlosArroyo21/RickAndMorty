@@ -38,10 +38,12 @@ Esto ayuda a mantener un código modular, escalable y fácil de probar.
 # Estructura de carpetas
 
 core: Contiene utilidades generales y configuraciones como la inyección de dependencias y constantes.
+
 features: Dividida en submódulos por funcionalidad. Cada módulo sigue la estructura:
-data: Implementación de repositorios, modelos y llamadas a la API.
-domain: Entidades y casos de uso.
-presentation: Stores (MobX) y widgets relacionados con la UI.
+
+    data: Implementación de repositorios, modelos y llamadas a la API.
+    domain: Entidades y casos de uso.
+    presentation: Stores (MobX) y widgets relacionados con la UI.
 
 # Paquetes utilizados
 go_router: Manejo de rutas y navegación con soporte para rutas declarativas.
