@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class CharacterApiDataSource {
   Future<List<CharacterModel>> getCharactersOf({required int page}) async {
     try {
-      final response = await http.get(Uri.parse("$apiUrl/?page=$page"));
+      final response = await http.get(Uri.parse("$apiUrl/?pages=$page"));
 
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);

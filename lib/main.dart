@@ -4,6 +4,7 @@ import 'package:rick_morty/core/constants/hive_boxes.dart';
 import 'package:rick_morty/core/hive/hive_registrar.g.dart';
 import 'package:rick_morty/core/routes/routes.dart';
 import 'package:rick_morty/core/service_locator/service_locator.dart';
+import 'package:rick_morty/core/theme/theme_data.dart';
 import 'package:rick_morty/features/characters/data/models/character.dart';
 
 Future<void> main() async {
@@ -25,7 +26,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       themeMode: ThemeMode.dark,
-      darkTheme: ThemeData.dark(),
+      darkTheme: RickAndMortyTheme.lightTheme,
       debugShowCheckedModeBanner: false,
     );
   }
