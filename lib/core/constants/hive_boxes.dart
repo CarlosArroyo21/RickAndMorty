@@ -1,0 +1,1 @@
+const favoriteCharactersBox = 'favorite_characters';

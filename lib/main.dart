@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
+import 'package:rick_morty/core/constants/hive_boxes.dart';
+import 'package:rick_morty/core/hive/hive_registrar.g.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
+
+  Hive.registerAdapters();
+
+  await Hive.openBox(favoriteCharactersBox);
   runApp(const MainApp());
 }
 
