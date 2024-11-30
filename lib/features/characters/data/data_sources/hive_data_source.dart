@@ -10,11 +10,11 @@ class FavoriteCharactersHiveDataSource {
     return _favoriteCharactersBox.values.toList();
   }
   Future<void> addFavoriteCharacter(CharacterModel character) async {
-    final result = await _favoriteCharactersBox.add(character);
-    print("what is this result $result");
+    await _favoriteCharactersBox.add(character);
+    // print("what is this result $result");
   }
-  Future<void> removeFavoriteCharacter(int characterId) async {
+  Future<void> removeFavoriteCharacter(int characterIndex) async {
+    final characterId = _favoriteCharactersBox.keyAt(characterIndex);
     return await _favoriteCharactersBox.delete(characterId);
   }
-  
 }

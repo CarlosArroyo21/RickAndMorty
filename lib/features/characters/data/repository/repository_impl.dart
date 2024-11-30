@@ -10,8 +10,8 @@ class CharacterRepositoryImpl implements CharacterRepository {
   CharacterRepositoryImpl(this._characterApiDataSource);
 
   @override
-  Future<List<Character>> getCharacters() async {
-    final characters = await _characterApiDataSource.getCharacters();
+  Future<List<Character>> getCharactersOf({required int page}) async {
+    final characters = await _characterApiDataSource.getCharactersOf(page: page);
 
     return characters.map((character) => character.toEntity()).toList();
   } 
@@ -37,8 +37,8 @@ class FavoriteCharacterRepositoryImpl implements FavoriteCharacterRepository {
   }
 
   @override
-  Future<void> removeFavoriteCharacter(int characterId) async {
+  Future<void> removeFavoriteCharacter(int characterIndex) async {
     return await _favoriteCharactersHiveDataSource
-        .removeFavoriteCharacter(characterId);
+        .removeFavoriteCharacter(characterIndex);
   }
 }

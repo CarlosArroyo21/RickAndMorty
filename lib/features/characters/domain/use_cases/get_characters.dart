@@ -4,7 +4,7 @@ import 'package:rick_morty/features/characters/domain/repository/character_repos
 class GetCharactersUseCase {
   final CharacterRepository repository;
 
-  GetCharactersUseCase({required this.repository});
+  GetCharactersUseCase(this.repository);
 
-  Future<List<Character>> call() => repository.getCharacters();
+  Future<List<Character>> call({required int page}) => repository.getCharactersOf(page: page);
 }

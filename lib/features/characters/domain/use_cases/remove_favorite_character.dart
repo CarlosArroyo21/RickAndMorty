@@ -5,5 +5,5 @@ class RemoveFavoriteCharacterUseCase {
   
   RemoveFavoriteCharacterUseCase(this.repository);
 
-  Future<void> call(int characterId) => repository.removeFavoriteCharacter(characterId);
+  Future<void> call(int characterIndex) => repository.removeFavoriteCharacter(characterIndex);
 }

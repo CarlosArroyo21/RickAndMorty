@@ -63,7 +63,8 @@ class CharacterModel extends HiveObject {
       created: created,
     );
   }
-  factory CharacterModel.fromJson(Map<String, dynamic> json) {
+  
+  factory CharacterModel.fromJson(Map<dynamic, dynamic> json) {
     return CharacterModel(
       id: json['id'],
       name: json['name'],
