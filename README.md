@@ -60,7 +60,7 @@ features: Dividida en submódulos por funcionalidad. Cada módulo sigue la estru
 
 # ✨ Funcionalidades implementadas
 Visualización de personajes de la API de Rick & Morty con paginación.
-Gestión de favoritos con persistencia local.
+Gestión de personajes favoritos con persistencia local.
 Navegación a través de pantallas usando rutas declarativas con go_router.
 Visualización de mapas con marcadores para Bogotá y Valledupar, utilizando flutter_map.
 
