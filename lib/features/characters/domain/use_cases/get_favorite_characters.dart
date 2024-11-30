@@ -6,5 +6,7 @@ class GetFavoriteCharactersUseCase {
 
   GetFavoriteCharactersUseCase(this.repository);
 
-  Future<List<Character>> call() => repository.getFavoriteCharacters();
+  List<Character> call() {
+    return repository.getFavoriteCharacters();
+  }
 }
