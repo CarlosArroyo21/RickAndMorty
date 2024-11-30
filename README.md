@@ -46,17 +46,17 @@ features: Dividida en submódulos por funcionalidad. Cada módulo sigue la estru
     presentation: Stores (MobX) y widgets relacionados con la UI.
 
 # Paquetes utilizados
-go_router: Manejo de rutas y navegación con soporte para rutas declarativas.
-flutter_mobx y mobx: Gestión del estado reactivo y observación de cambios en tiempo real.
-flutter_map: Visualización de mapas interactivos.
-hive_ce y hive_ce_flutter: Almacenamiento local para persistencia de datos (personajes favoritos).
-get_it: Inyección de dependencias para desacoplar componentes.
-http: Realización de solicitudes HTTP.
-latlong2: Manejo de coordenadas geográficas en mapas.
-Decisiones técnicas:
-Gestión del estado: Se utilizó MobX para aprovechar la programación reactiva y manejar de manera eficiente el estado de la aplicación.
-Inyección de dependencias: Se implementó GetIt para lograr un alto grado de desacoplamiento entre los diferentes niveles de la arquitectura.
-Persistencia local: Los personajes marcados como favoritos se almacenan localmente usando Hive, permitiendo que estos datos se mantengan incluso si la aplicación se reinicia.
+- go_router: Manejo de rutas y navegación con soporte para rutas declarativas.
+- flutter_mobx y mobx: Gestión del estado reactivo y observación de cambios en tiempo real.
+- flutter_map: Visualización de mapas interactivos.
+- hive_ce y hive_ce_flutter: Almacenamiento local para persistencia de datos (personajes favoritos).
+- get_it: Inyección de dependencias para desacoplar componentes.
+- http: Realización de solicitudes HTTP.
+- latlong2: Manejo de coordenadas geográficas en mapas.
+- Decisiones técnicas:
+- Gestión del estado: Se utilizó MobX para aprovechar la programación reactiva y manejar de manera eficiente el estado de la aplicación.
+- Inyección de dependencias: Se implementó GetIt para lograr un alto grado de desacoplamiento entre los diferentes niveles de la arquitectura.
+- Persistencia local: Los personajes marcados como favoritos se almacenan localmente usando Hive, permitiendo que estos datos se mantengan incluso si la - aplicación se reinicia.
 
 # ✨ Funcionalidades implementadas
 Visualización de personajes de la API de Rick & Morty con paginación.
