@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class GlassmorphicAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
-  const GlassmorphicAppBar({super.key, required this.title});
+
+  const GlassmorphicAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

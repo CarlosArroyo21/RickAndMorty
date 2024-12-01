@@ -18,7 +18,7 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const FavoritesCharactersScreen(),
     ),
     GoRoute(
-      path: '/charater-details',
+      path: '/character-details',
       builder: (context, state) {
         final characterDetails = state.extra as Character;
         return CharacterDetailsScreen(charaterDetails: characterDetails);
