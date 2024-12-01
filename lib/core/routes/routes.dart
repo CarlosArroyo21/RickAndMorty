@@ -21,7 +21,7 @@ final GoRouter router = GoRouter(
       path: '/character-details',
       builder: (context, state) {
         final characterDetails = state.extra as Character;
-        return CharacterDetailsScreen(charaterDetails: characterDetails);
+        return CharacterDetailsScreen(characterDetails: characterDetails);
       },
     ),
     GoRoute(

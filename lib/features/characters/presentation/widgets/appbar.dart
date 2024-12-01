@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class GlassmorphicAppBar extends StatelessWidget implements PreferredSizeWidget {
 
-  const GlassmorphicAppBar({super.key, required this.appBar});
+  const GlassmorphicAppBar({super.key, required this.appBar, this.appBarHeight = kToolbarHeight});
 
   final AppBar appBar;
+  
+  final double appBarHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -18,5 +20,5 @@ class GlassmorphicAppBar extends StatelessWidget implements PreferredSizeWidget 
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(appBarHeight);
 }
