@@ -36,7 +36,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: const GlassmorphicAppBar(),
+        appBar: GlassmorphicAppBar(
+          appBar: AppBar(
+            title: Image.asset(
+              'lib/assets/images/logo.png',
+              width: 100,
+              height: 50,
+            ),
+            backgroundColor: Colors.black.withOpacity(0.0), // Semi-transparente
+            elevation: 0,
+            actions: [
+              IconButton(
+                  icon: const Icon(Icons.favorite_border),
+                  onPressed: () {
+                    context.push('/favorites');
+                  }),
+              IconButton(
+                  icon: const Icon(Icons.map_outlined),
+                  onPressed: () {
+                    context.push('/map');
+                  })
+            ],
+          ),
+        ),
         body: Stack(
           children: [
             Positioned.fill(
@@ -55,15 +77,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             characterStore.isLoading
                         ? const CircularProgressIndicator()
                         : ListView.builder(
+                          padding: const EdgeInsets.only(top: 100),
                             controller: scrollController,
                             itemCount: characterStore.charactersList.length +
                                 (characterStore.isLoading ? 1 : 0),
                             itemBuilder: (context, index) {
-                              if (index == 0) {
-                                return const SizedBox(
-                                  height: 20,
-                                );
-                              }
 
                               if (index ==
                                   characterStore.charactersList.length) {
@@ -72,7 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               }
 
                               return GestureDetector(
-                                onTap: () => context.push('/character-details', extra: characterStore.charactersList[index]),
+                                onTap: () => context.push('/character-details',
+                                    extra:
+                                        characterStore.charactersList[index]),
                                 child: Card(
                                   color: const Color.fromARGB(255, 26, 29, 39),
                                   margin: const EdgeInsets.symmetric(
@@ -121,16 +141,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 spacing: 8,
                                                 children: [
                                                   CharacterStatus(
-                                                    characterText: characterStore
-                                                        .charactersList[index].status,
+                                                    characterText:
+                                                        characterStore
+                                                            .charactersList[
+                                                                index]
+                                                            .status,
                                                     characterStatusType:
-                                                        CharacterStatusType.status,
+                                                        CharacterStatusType
+                                                            .status,
                                                   ),
                                                   CharacterStatus(
-                                                    characterText: characterStore
-                                                        .charactersList[index].gender,
+                                                    characterText:
+                                                        characterStore
+                                                            .charactersList[
+                                                                index]
+                                                            .gender,
                                                     characterStatusType:
-                                                        CharacterStatusType.gender,
+                                                        CharacterStatusType
+                                                            .gender,
                                                   ),
                                                 ],
                                               )
@@ -144,7 +172,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                             icon: Icon(
                                               characterStore.isFavorite(
                                                       characterStore
-                                                          .charactersList[index])
+                                                              .charactersList[
+                                                          index])
                                                   ? Icons.favorite
                                                   : Icons.favorite_border,
                                             ),
